@@ -113,7 +113,9 @@ public class DataBank extends JPanel {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(f, true)))) {
         jlbInformation.setText("Info: Congrats! data-file.txt opened for writing!");
             if(theSwitch == "writeNow"){
-                line = jtxName.getText()+","+jtxFamilyName.getName()+","; //jcbNationality.getSelectedItem();
+                String nationality = (String)jcbNationality.getSelectedItem();
+                String profession = (String)jcbProfession.getSelectedItem();                
+                line = jtxName.getText()+","+jtxFamilyName.getText()+","+nationality+","+profession+","; 
                 out.println(line);
                 jlbInformation.setText("Info: Congrats! record entered into database successfully");
 
