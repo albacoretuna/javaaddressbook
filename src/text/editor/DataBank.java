@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+// (when file reaches the end, a message "No more data" is displayed). 
 public class DataBank extends JPanel {
 
     private JButton btnOpenForWriting, btnWriteThis, btnOpenForReading, btnReadNext;
@@ -137,6 +137,10 @@ public class DataBank extends JPanel {
         do{
         line = in.readLine();
         i++;
+        if(line == null){
+            jlbInformation.setText("Info: Reached the end of file, no more records!");
+            break;
+        }
         }while(lineNumber > i);
         
         
